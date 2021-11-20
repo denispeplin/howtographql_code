@@ -5,6 +5,10 @@ defmodule CommunityWeb.NewsResolver do
     {:ok, News.list_links()}
   end
 
+  def get_link(_root, args, _info) do
+    {:ok, News.get_link!(args.id)}
+  end
+
   def create_link(_root, args, _info) do
     # TODO: add detailed error message handling later
     case News.create_link(args) do
